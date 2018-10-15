@@ -1,0 +1,16 @@
+Example of Structural Directives-Nested Components
+<p>
+  parent works!
+</p>
+<div>
+  <label>Parent_input(using Template Referance variable)</label>
+  <input type="text" id='parentinput' #parentValue (keyup)='0' />
+</div>
+<!-- {{parentValue}}<br />
+{{parentValue|json}}<br />
+{{parentValue.value}}<br /> -->
+<br/>
+Data From Child: {{childData}}
+<br/>
+<app-child [valueFromParent]='parentValue.value'  (customChildEvent) = 'childData = $event'></app-child>
+<!--Sending a variable from parent to child-->

@@ -1,0 +1,14 @@
+<!-- toggle the "special" class on/off with a property -->
+-------<br/>
+Example of Property->class Binding
+<br/>
+<div [class.random]="someVar">The class binding is special</div>
+<!--Here Random is css.class_name-->
+<!--SomeVar is variable is true this class will be applied-->
+-------<br/>
+Example of ngClass<br/>
+<div  [ngClass]="currentClasses">This div is initially saveable, unchanged, and special</div>
+<button (click)="changesDone()">change class 1</button>
+<br/>
+<button (click)="changesAgainDone()">change class 2</button>
+<br/>-------<br/>

@@ -1,0 +1,33 @@
+<p>
+  city works!
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">COUNTRY</th>
+      <th scope="col">LON</th>
+      <th scope="col">LAT</th>
+    </tr>
+  </thead>
+  <tbody *ngFor='let runner of cityList'>
+    <tr>
+      {{runner.id}}
+      <td>
+        {{runner.name}}
+      </td>
+      <td>
+        {{runner.country}}
+      </td>
+      <td>
+        {{runner.coord.lon}}
+      </td>
+      <td>
+        {{runner.coord.lat}}
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>

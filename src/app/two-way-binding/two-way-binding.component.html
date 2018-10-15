@@ -1,0 +1,25 @@
+Exapmle of 2 way data Binding
+<br />
+WPA: Show content of text box
+<br />
+Solution: Using $event
+<div>
+  using [value]: Property->Attribute Binding
+  <br />
+  ANd (input) Event binding, Input is a event in text box
+  <br /><br />
+  <label for='inputbox'>Insert Text In Tetx Box</label>
+  <input type="text" name='inputbox' [value]='txt' (input)="txt=$event.target.value">
+  <p>{{txt}}</p>
+</div>
+Showing Events
+<p> Displaying the $event values</p>
+<div>
+  <input (keyup)='onKeyUp($event)' placeholder="for Event">
+  <p>{{values}}</p>
+</div>
+<!---using ngmodels-->
+Solution 2: Using ngModel
+<br/>
+<input [(ngModel)]='textVal'>
+<p>{{textVal}}</p>

@@ -1,0 +1,20 @@
+.backgrund{
+    background-color: blue
+}
+.saveable{
+    color: red;
+    font-size: 50px
+}
+.modified{
+    color: green;
+    font-size: 20px;
+}
+.special{
+    color: rgb(56, 19, 124);
+    font-size: 25px;
+    
+}
+.random{
+    color: yellow;
+    font-size: 28px;
+}

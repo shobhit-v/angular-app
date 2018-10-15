@@ -1,0 +1,16 @@
+<p>
+  child works!
+</p>
+Using @input: Data from Parent:{{valueFromParent | uppercase}}<br />
+Using @input: Data from Parent:{{valueFromParent | date:'dd/MM/yy'}}
+<br />
+<label for="childInput">Take This Data to parent</label>
+<input type="text" id="childInput" #childValue (keyup)="onChange(childValue.value)" />
+
+<br />
+Parametrized Piping
+<br/>
+<p>The hero's birthday is {{ birthday | date:format }}</p>
+<button (click)="toggleFormat()">Toggle Format</button>
+
+<br /><br /><br /><br /><br />
