@@ -12,7 +12,7 @@ export class CityComponent implements OnInit {
   ngOnInit() {
   }
 
-  cityList = require('../../assets/city.list.json');
+  //cityList = require('../../assets/city.list.json');
  
   // cityList =
   //   [
