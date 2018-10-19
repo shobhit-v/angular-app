@@ -1,0 +1,17 @@
+-------<br />
+Example of Pipes & Filters
+<p>
+  Regular: {{somevar}}<br />
+  uppercase: {{somevar|uppercase}}<br />
+  lowercasecase: {{somevar|lowercase}}<br />
+</p>
+-------<br />
+Parametrized Piping
+<br />
+orignal: {{date}}<br />
+Transformed: {{date| date:'dd/MM/yy'}}
+<br/>-------<br />
+WAP to toggle Date Format<br />
+<p>The hero's birthday is {{ birthday | date:format }}</p>
+<button (click)="toggleFormat()">Toggle Format</button>
+<br/>-------<br />

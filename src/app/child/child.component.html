@@ -1,14 +1,5 @@
 <h5>--Child page Start--</h5>
-Using @input: Data from Parent in child:{{valueFromParent | uppercase}}<br />
-Using @input: Data from Parent in child:{{valueFromParent | date:'dd/MM/yy'}}
-<br />
+Using @input: Data from Parent in child:{{valueFromParent}}<br />
 <label for="childInput">Take This Data to parent</label>
 <input type="text" id="childInput" #childValue (keyup)="onChange(childValue.value)" />
-
-<br />
-Parametrized Piping
-<br/>
-<p>The hero's birthday is {{ birthday | date:format }}</p>
-<button (click)="toggleFormat()">Toggle Format</button>
-
 <h5>--Child page Finish--</h5>

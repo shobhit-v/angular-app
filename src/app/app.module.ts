@@ -11,6 +11,7 @@ import { TwoWayClassComponent } from './two-way-class/two-way-class.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { CityComponent } from './city/city.component';
+import { PipeNfilterComponent } from './pipe-nfilter/pipe-nfilter.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CityComponent } from './city/city.component';
     TwoWayClassComponent,
     ParentComponent,
     ChildComponent,
-    CityComponent
+    CityComponent,
+    PipeNfilterComponent
   ],
   imports: [
     BrowserModule,
