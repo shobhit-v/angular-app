@@ -1,17 +1,23 @@
 <p>
-  city works!
+  Example of custom pipe<br />
+  {{ reverseThisVar | reverseStr }}
 </p>
+<br/>
+WAP. to filter data of Json on the bases of name using custom pipe.
 <table class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">NAME</th>
+      <th scope="col">NAME
+        <br />
+        <input type="text" [(ngModel)]="name_filter" />
+      </th>
       <th scope="col">COUNTRY</th>
       <th scope="col">LON</th>
       <th scope="col">LAT</th>
     </tr>
   </thead>
-  <tbody *ngFor='let runner of cityList'>
+  <tbody *ngFor='let runner of cityList | CityNamePipe: name_filter'>
     <tr>
       {{runner.id}}
       <td>

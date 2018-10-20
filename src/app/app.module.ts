@@ -12,6 +12,8 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { CityComponent } from './city/city.component';
 import { PipeNfilterComponent } from './pipe-nfilter/pipe-nfilter.component';
+import { ReverseStr } from './reverse-str.pipe';
+import { CityNamePipe } from './city-name.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PipeNfilterComponent } from './pipe-nfilter/pipe-nfilter.component';
     ParentComponent,
     ChildComponent,
     CityComponent,
-    PipeNfilterComponent
+    PipeNfilterComponent,
+    ReverseStr,
+    CityNamePipe
   ],
   imports: [
     BrowserModule,
