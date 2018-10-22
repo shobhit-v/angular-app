@@ -1,13 +1,25 @@
------------<br/>
-Example for ng-if<br/>
+-----------<br />
+<h4>Example of ng-if</h4><br />
 Bellow tag using ng-if to add or remove an element from the DOM.
-<br/>
+<br />
 Hiding an element is quite different from removing an element with NgIf.
-<br/>
+<br />
 it also Guard against null
 <p *ngIf="currentHero">
   <b>ng-if-example works!</b>
 </p>
-<br/>
+<br />
 <button (click)='changNgIF()'>Test Ng IF</button>
-<br/><br/>
+<br />
+-----------
+<br/>
+ngif with ngfor
+<br/>
+Please insert max age <input type="number" [(ngModel)]="filer_age" /> to filter data!
+<ul *ngFor="let person of people">
+  <li *ngIf="person.age>filer_age">
+    {{person.name}}({{person.age}})
+  </li>
+</ul>
+<br />
+<br/>

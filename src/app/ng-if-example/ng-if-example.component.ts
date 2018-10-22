@@ -11,8 +11,35 @@ export class NgIfExampleComponent implements OnInit {
   currentHero = true;
   ngOnInit() {
   }
-  changNgIF(){
+  changNgIF() {
     this.currentHero = !this.currentHero;
   }
+  filer_age: number = 1;
+  people: any[] = [
+    {
+      "name": "abc",
+      "age": 35
+    },
+    {
+      "name": "xyz",
+      "age": 30
+    },
+    {
+      "name": "pqr",
+      "age": 28
+    },
+    {
+      "name": "lmno",
+      "age": 35
+    },
+    {
+      "name": "qwerty",
+      "age": 22
+    },
+    {
+      "name": "asdf",
+      "age": 38
+    }
+  ];
 
 }
