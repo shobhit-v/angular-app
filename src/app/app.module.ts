@@ -14,6 +14,7 @@ import { CityComponent } from './city/city.component';
 import { PipeNfilterComponent } from './pipe-nfilter/pipe-nfilter.component';
 import { ReverseStr } from './reverse-str.pipe';
 import { CityNamePipe } from './city-name.pipe';
+import { NgIfExampleComponent } from './ng-if-example/ng-if-example.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CityNamePipe } from './city-name.pipe';
     CityComponent,
     PipeNfilterComponent,
     ReverseStr,
-    CityNamePipe
+    CityNamePipe,
+    NgIfExampleComponent
   ],
   imports: [
     BrowserModule,
