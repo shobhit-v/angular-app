@@ -1,0 +1,52 @@
+-----------<br />
+HTTP and Observables
+<p>
+  WAP: To show wether data from openweather.org API for a fixed name London?
+</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">COUNTRY</th>
+            <th scope="col">LON</th>
+            <th scope="col">LAT</th>
+          </tr>
+        </thead>
+        <tbody *ngFor='let runner of cityList'>
+          <tr>
+            {{runner.id}}
+            <td>
+              {{runner.name}}
+            </td>
+            <td>
+              {{runner.country}}
+            </td>
+            <td>
+              {{runner.coord.lon}}
+            </td>
+            <td>
+              {{runner.coord.lat}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4" style="margin-top: 10px ;overflow: scroll;height: 100vh">
+      &nbsp;
+      <label>City Name:</label>
+      <input type="text" placeholder="London">
+      <span> &nbsp; </span>
+      <input type="button" value='SUBMIT' (click)='getWeatherDataHtml()'>
+      <span> &nbsp; </span>
+      <input type="reset">
+      <pre style="background-color: aqua;border: 5px">
+        <p>{{errorMessage}}</p>
+        {{weatherData}}
+      </pre>
+    </div>
+  </div>
+</div>

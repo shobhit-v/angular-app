@@ -16,6 +16,8 @@ import { ReverseStr } from './reverse-str.pipe';
 import { CityNamePipe } from './city-name.pipe';
 import { NgIfExampleComponent } from './ng-if-example/ng-if-example.component';
 import { NgSwitchExampleComponent } from './ng-switch-example/ng-switch-example.component';
+import { WeatherDispalyComponent } from './weather-dispaly/weather-dispaly.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,11 +33,13 @@ import { NgSwitchExampleComponent } from './ng-switch-example/ng-switch-example.
     ReverseStr,
     CityNamePipe,
     NgIfExampleComponent,
-    NgSwitchExampleComponent
+    NgSwitchExampleComponent,
+    WeatherDispalyComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
