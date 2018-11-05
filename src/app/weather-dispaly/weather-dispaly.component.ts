@@ -12,10 +12,11 @@ export class WeatherDispalyComponent implements OnInit {
   constructor(private weatherDataService: WeatherService) { }
 
   weatherData: any;
-  errorMessage : any
+  errorMessage: any;
+  place_name: string;
 
   getWeatherDataHtml() {
-    this.weatherDataService.getWeatherData().subscribe(
+    this.weatherDataService.getWeatherData(this.place_name).subscribe(
       data => this.weatherData = JSON.stringify(data, undefined, 4),
       error => this.errorMessage = error
     );
