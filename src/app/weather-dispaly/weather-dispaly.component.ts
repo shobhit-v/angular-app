@@ -12,7 +12,7 @@ export class WeatherDispalyComponent implements OnInit {
   constructor(private weatherDataService: WeatherService) { }
 
   weatherData: any;
-  errorMessage: any;
+  errorMessage: any='';
   place_name: string = 'London';
   updateRecored(name) {
     this.place_name = name;
@@ -23,6 +23,11 @@ export class WeatherDispalyComponent implements OnInit {
       data => this.weatherData = JSON.stringify(data, undefined, 4),
       error => this.errorMessage = error
     );
+  }
+  reset(){
+    this.place_name = 'London';
+    this.errorMessage = '';
+    this.getWeatherDataHtml();
   }
   ngOnInit() {
     this.getWeatherDataHtml();

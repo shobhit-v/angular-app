@@ -42,7 +42,7 @@ HTTP and Observables
       <span> &nbsp; </span>
       <input type="button" value='SUBMIT' (click)='getWeatherDataHtml()'>
       <span> &nbsp; </span>
-      <input type="reset">
+      <input type="reset" (click)='reset()'>
       <pre style="background-color: aqua;border: 5px">
         <p>{{errorMessage}}</p>
         {{weatherData}}
