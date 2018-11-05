@@ -19,7 +19,7 @@ HTTP and Observables
         <tbody *ngFor='let runner of cityList'>
           <tr>
             {{runner.id}}
-            <td>
+            <td (click)='updateRecored(runner.name)'>
               {{runner.name}}
             </td>
             <td>

@@ -14,7 +14,10 @@ export class WeatherDispalyComponent implements OnInit {
   weatherData: any;
   errorMessage: any;
   place_name: string;
-
+  updateRecored(name) {
+    this.place_name = name;
+    this.getWeatherDataHtml();
+  }
   getWeatherDataHtml() {
     this.weatherDataService.getWeatherData(this.place_name).subscribe(
       data => this.weatherData = JSON.stringify(data, undefined, 4),
