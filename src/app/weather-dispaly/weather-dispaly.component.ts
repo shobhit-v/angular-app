@@ -13,7 +13,7 @@ export class WeatherDispalyComponent implements OnInit {
 
   weatherData: any;
   errorMessage: any;
-  place_name: string;
+  place_name: string = 'London';
   updateRecored(name) {
     this.place_name = name;
     this.getWeatherDataHtml();
@@ -25,6 +25,7 @@ export class WeatherDispalyComponent implements OnInit {
     );
   }
   ngOnInit() {
+    this.getWeatherDataHtml();
   }
   cityList =
     [
