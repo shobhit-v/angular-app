@@ -12,19 +12,27 @@ export class WeatherDispalyComponent implements OnInit {
   constructor(private weatherDataService: WeatherService) { }
 
   weatherData: any;
-  errorMessage: any='';
+  errorMessage: any = '';
   place_name: string = 'London';
+  showLoader: boolean = true;
   updateRecored(name) {
     this.place_name = name;
     this.getWeatherDataHtml();
   }
+  cleanUp() {
+    this.showLoader = true;
+    this.errorMessage = '';
+    this.weatherData = '';
+  }
   getWeatherDataHtml() {
+    this.cleanUp();
     this.weatherDataService.getWeatherData(this.place_name).subscribe(
       data => this.weatherData = JSON.stringify(data, undefined, 4),
-      error => this.errorMessage = error
+      error => this.errorMessage = error,
+      () => this.showLoader = false
     );
   }
-  reset(){
+  reset() {
     this.place_name = 'London';
     this.errorMessage = '';
     this.getWeatherDataHtml();

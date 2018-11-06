@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { throwError } from '../../node_modules/rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { delay } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,8 @@ export class WeatherService {
   getWeatherData(place_name): Observable<any> {
     this.placeName = place_name;
     return this.httpAgent.get(this.geturl())
-      .pipe(catchError(this.errorHandler));
+      .pipe(catchError(this.errorHandler))
+      .pipe(delay(5000));
   }
 
   errorHandler(error: HttpErrorResponse) {

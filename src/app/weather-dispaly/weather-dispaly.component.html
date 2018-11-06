@@ -36,17 +36,22 @@ HTTP and Observables
       </table>
     </div>
     <div class="col-md-4" style="margin-top: 10px ;overflow: scroll;height: 100vh">
-      &nbsp;
-      <label>City Name:</label>
-      <input type="text" placeholder="London" [(ngModel)]="place_name">
-      <span> &nbsp; </span>
-      <input type="button" value='SUBMIT' (click)='getWeatherDataHtml()'>
-      <span> &nbsp; </span>
-      <input type="reset" (click)='reset()'>
-      <pre style="background-color: aqua;border: 5px">
-        <p>{{errorMessage}}</p>
-        {{weatherData}}
-      </pre>
+      <div>
+        &nbsp;
+        <label>City Name:</label>
+        <input type="text" placeholder="London" [(ngModel)]="place_name">
+        <span> &nbsp; </span>
+        <input type="button" value='SUBMIT' (click)='getWeatherDataHtml()'>
+        <span> &nbsp; </span>
+        <input type="reset" (click)='reset()'>
+        <div *ngIf="showLoader">            
+          <img src="https://cdn-images-1.medium.com/max/1600/0*cWpsf9D3g346Va20.gif" />
+        </div>
+        <pre style="background-color: aqua;border: 5px">
+          <p>{{errorMessage}}</p>
+          {{weatherData}}
+        </pre>
+      </div>
     </div>
   </div>
 </div>
