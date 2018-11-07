@@ -18,6 +18,8 @@ import { NgIfExampleComponent } from './ng-if-example/ng-if-example.component';
 import { NgSwitchExampleComponent } from './ng-switch-example/ng-switch-example.component';
 import { WeatherDispalyComponent } from './weather-dispaly/weather-dispaly.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { HttpClientModule } from '@angular/common/http';
     CityNamePipe,
     NgIfExampleComponent,
     NgSwitchExampleComponent,
-    WeatherDispalyComponent
+    WeatherDispalyComponent,
+    LifeCycleComponent,
+    LifeCycleChildComponent
   ],
   imports: [
     BrowserModule,
