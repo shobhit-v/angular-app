@@ -20,6 +20,7 @@ import { WeatherDispalyComponent } from './weather-dispaly/weather-dispaly.compo
 import { HttpClientModule } from '@angular/common/http';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.com
     NgSwitchExampleComponent,
     WeatherDispalyComponent,
     LifeCycleComponent,
-    LifeCycleChildComponent
+    LifeCycleChildComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
