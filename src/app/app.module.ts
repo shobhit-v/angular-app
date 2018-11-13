@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SecondComponentComponent } from './second-component/second-component.component';
@@ -21,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -40,12 +41,14 @@ import { TemplateFormComponent } from './template-form/template-form.component';
     WeatherDispalyComponent,
     LifeCycleComponent,
     LifeCycleChildComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
