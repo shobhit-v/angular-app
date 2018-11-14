@@ -22,6 +22,7 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ReactiveMultipleFormComponent } from './reactive-multiple-form/reactive-multiple-form.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     LifeCycleComponent,
     LifeCycleChildComponent,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    ReactiveMultipleFormComponent
   ],
   imports: [
     BrowserModule,
