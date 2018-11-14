@@ -1,4 +1,14 @@
--------------------<br/>
+-------------------<br />
 <p>
   reactive-form
 </p>
+<div class="form-group">
+  <label for="formGroupExampleInput">Example label</label>
+  <input type="text" [formControl]='testControl' class="form-control" id="formGroupExampleInput" placeholder="Example input">
+</div>
+<div>
+  valid : {{ testControl.valid }} <br>
+  touched : {{ testControl.touched }} <br>
+  dirty : {{ testControl.dirty }} <br>
+  value : {{ testControl.value }}
+</div>
