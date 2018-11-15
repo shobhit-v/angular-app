@@ -9,10 +9,10 @@
     <input type="text" formControlName="email" class="form-control" id="formGroupExampleInput" placeholder="Email input">
   </div>
 
-  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email').touched && loginForm.get('email').errors?.required">
+  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('required')">
     <strong>Oh snap!</strong> this Field is required.
   </div>
-  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email').touched && loginForm.get('email').errors?.email">
+  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('email')">
     <strong>Oh snap!</strong> Not a valid email.
   </div>
 
@@ -21,7 +21,7 @@
     <label for="formGroupExampleInput2">Password label</label>
     <input type="text" formControlName="password" class="form-control" id="formGroupExampleInput2" placeholder="Password input">
   </div>
-  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('password').touched && loginForm.get('password').errors?.required">
+  <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">
     <strong>Oh snap!</strong> this Field is required.
   </div>
   <button class="btn btn-success" (click)="displayGroup()"> Test Button </button>
