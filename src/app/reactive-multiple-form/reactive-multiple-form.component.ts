@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-multiple-form',
@@ -14,8 +14,12 @@ export class ReactiveMultipleFormComponent implements OnInit {
   }
 
   loginForm = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl()
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required)
   });
+
+  displayGroup() {
+    console.log(this.loginForm);
+  }
 
 }

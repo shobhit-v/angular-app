@@ -8,10 +8,20 @@
     <label for="formGroupExampleInput">Email label</label>
     <input type="text" formControlName="email" class="form-control" id="formGroupExampleInput" placeholder="Email input">
   </div>
+
+  <div class="alert alert-danger" role="alert" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
+    <strong>Oh snap!</strong> this Field is required.
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors.email">
+    <strong>Oh snap!</strong> Not a valid email.
+  </div>
+
+
   <div class="form-group">
     <label for="formGroupExampleInput2">Password label</label>
     <input type="text" formControlName="password" class="form-control" id="formGroupExampleInput2" placeholder="Password input">
   </div>
+  <button class="btn btn-success" (click)="displayGroup()"> Test Button </button>
 </form>
 <!-- Form State -->
 <div>
