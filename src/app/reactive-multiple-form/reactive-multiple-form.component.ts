@@ -18,6 +18,14 @@ export class ReactiveMultipleFormComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
+  get emailControl() {
+    return this.loginForm.get('email')
+  }
+
+  get passControl() {
+    return this.loginForm.get('password')
+  }
+
   displayGroup() {
     console.log(this.loginForm);
   }
