@@ -24,8 +24,26 @@
   <div class="alert alert-danger" role="alert" *ngIf="passControl.touched && passControl.hasError('required')">
     <strong>Oh snap!</strong> this Field is required.
   </div>
-  <button class="btn btn-success" (click)="displayGroup()"> Test Button </button>
+  <!-- <button class="btn btn-success" (click)="displayGroup()"> Test Button </button> -->
+
+  <div formGroupName="address">
+    <input class="form-control mb-3" placeholder="Addres Line1" type="text" formControlName="addressLine1">
+    <input class="form-control mb-3" placeholder="Address Line2" type="text" formControlName="addressLine2">
+    <select class="custom-select mb-3" formControlName="city">
+      <option selected="">Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <!-- <option *ngFor="let city of cities" value="city">{{ city }}</option> -->
+    </select>
+    <input class="form-control mb-3" placeholder="State" type="text" formControlName="state">
+  </div>
 </form>
+<div class="text-center">
+  <button [disabled]="loginForm.invalid" class="btn btn-primary" (click)="submitForm()">
+    Submit Form
+  </button>
+</div>
 <!-- Form State -->
 <div>
   valid : {{ loginForm.valid }} <br>
