@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { SecondComponentComponent } from './second-component/second-component.component';
@@ -23,6 +24,16 @@ import { LifeCycleChildComponent } from './life-cycle-child/life-cycle-child.com
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveMultipleFormComponent } from './reactive-multiple-form/reactive-multiple-form.component';
+import { OuterCOneComponent } from './outer-c-one/outer-c-one.component';
+import { OuterCTwoComponent } from './outer-c-two/outer-c-two.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+const appRoutes: Routes = [
+  { path: 'router1', component: OuterCOneComponent },
+  { path: 'router2', component: OuterCTwoComponent },
+  { path: '', redirectTo: 'router1', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -44,13 +55,17 @@ import { ReactiveMultipleFormComponent } from './reactive-multiple-form/reactive
     LifeCycleChildComponent,
     TemplateFormComponent,
     ReactiveFormComponent,
-    ReactiveMultipleFormComponent
+    ReactiveMultipleFormComponent,
+    OuterCOneComponent,
+    OuterCTwoComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot(appRoutes,{enableTracing:true})
   ],
   providers: [],
   bootstrap: [AppComponent]
