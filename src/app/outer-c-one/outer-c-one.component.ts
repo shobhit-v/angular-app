@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-outer-c-one',
@@ -7,7 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OuterCOneComponent implements OnInit {
 
-  constructor() { }
+  userId;
+  constructor(private route: ActivatedRoute) {
+
+    this.route.params.subscribe(
+      paramsRecived => {
+        this.userId = paramsRecived.userId;
+        console.log(this.userId);
+      }
+      // function (params) {
+      //   this.userId = params.userId;
+      //   console.log(this.userId);
+      // }
+    )
+    
+  }
 
   ngOnInit() {
   }
