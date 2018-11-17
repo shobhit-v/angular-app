@@ -8,7 +8,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class ReactiveMultipleFormComponent implements OnInit {
 
-  loginForm;
+  loginForm: FormGroup;
   constructor(
     private fb: FormBuilder
   ) { }
@@ -46,6 +46,26 @@ export class ReactiveMultipleFormComponent implements OnInit {
 
   displayGroup() {
     console.log(this.loginForm);
+  }
+
+  setDataToform() {
+    this.loginForm.setValue({
+      email: 'sample@value.com',
+      password: '123',
+      address: {
+        addressLine1: 'line-1',
+        addressLine2: 'line-2',
+        city: '1',
+        state: 'state'
+      }
+    });
+  }
+
+  setFewDataToform() {
+    this.loginForm.patchValue({
+      email: 'sample@value.com',
+      password: '123',      
+    });
   }
 
 }
