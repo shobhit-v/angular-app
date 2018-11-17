@@ -15,7 +15,12 @@
   <div class="alert alert-danger" role="alert" *ngIf="emailControl.touched && emailControl.hasError('email')">
     <strong>Oh snap!</strong> Not a valid email.
   </div>
-
+  <div class="alert alert-danger" role="alert" *ngIf="emailControl.touched && emailControl.hasError('hasSpaceCheck')">
+    <strong>Oh snap!</strong>Space Not Allowed.
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="emailControl.touched && emailControl.hasError('endWithDotComCheck')">
+    <strong>Oh snap!</strong>Only Dot Com Domain Allowews.
+  </div>
 
   <div class="form-group">
     <label for="formGroupExampleInput2">Password label</label>
@@ -46,15 +51,15 @@
 </div>
 <br />
 <div class="text-center">
-<button class="btn btn-primary" (click)="setDataToform()">
-  Setsome value Form
-</button>
+  <button class="btn btn-primary" (click)="setDataToform()">
+    Setsome value Form
+  </button>
 </div>
 <br />
 <div class="text-center">
-<button class="btn btn-primary" (click)="setFewDataToform()">
-  setFewData To form
-</button>
+  <button class="btn btn-primary" (click)="setFewDataToform()">
+    setFewData To form
+  </button>
 </div>
 <!-- Form State -->
 <div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import {CustomeValidator} from './testValidator'
 
 @Component({
   selector: 'app-reactive-multiple-form',
@@ -15,7 +16,7 @@ export class ReactiveMultipleFormComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      email: [{ value: 'Abc@gmail.com', disabled: true }, [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email, CustomeValidator.haveSpace, CustomeValidator.haveDotCom ]],
       password: ['', Validators.required],
       address: this.fb.group({
         addressLine1: '',
