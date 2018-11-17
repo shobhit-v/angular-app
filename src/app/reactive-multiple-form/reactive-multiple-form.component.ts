@@ -32,6 +32,10 @@ export class ReactiveMultipleFormComponent implements OnInit {
     console.log(this.loginForm.getRawValue())
   }
 
+  resetForm(){
+    this.loginForm.reset();
+  }
+
   // loginForm = new FormGroup({
   //   email: new FormControl('', [Validators.required, Validators.email]),
   //   password: new FormControl('', Validators.required)
