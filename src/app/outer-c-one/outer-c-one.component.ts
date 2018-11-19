@@ -10,6 +10,14 @@ export class OuterCOneComponent implements OnInit {
 
   userId;
   constructor(private route: ActivatedRoute) {
+    const id: string = route.snapshot.params.userId;
+    console.log("By Snap shot route params", id);
+
+    const email: string = route.snapshot.queryParams.email;
+    console.log("By Snap shot query params", email);
+
+    const user = route.snapshot.data.headingone;
+    console.log("By Snap shot routing data", user);
 
     this.route.params.subscribe(
       paramsRecived => {
@@ -23,7 +31,7 @@ export class OuterCOneComponent implements OnInit {
     )
     this.route.queryParams.subscribe(
       qparams => {
-        console.log(qparams);
+        console.log(qparams.email);
       }
     );
     this.route.data.subscribe(

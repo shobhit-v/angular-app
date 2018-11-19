@@ -37,7 +37,7 @@ const appRoutes: Routes = [
     }
   },
   { path: 'router2', component: OuterCTwoComponent },
-  { path: '', redirectTo: 'router1', pathMatch: 'full' },
+  //{ path: '', redirectTo: 'router1', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
