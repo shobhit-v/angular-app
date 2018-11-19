@@ -29,12 +29,15 @@ import { OuterCTwoComponent } from './outer-c-two/outer-c-two.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
-  { 
-    path: 'router1/:userId', 
-    component: OuterCOneComponent 
+  {
+    path: 'router1/:userId',
+    component: OuterCOneComponent,
+    data: {
+      headingone: "hello"
+    }
   },
   { path: 'router2', component: OuterCTwoComponent },
-  // { path: '', redirectTo: 'router1', pathMatch: 'full' },
+  { path: '', redirectTo: 'router1', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -68,7 +71,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes,{enableTracing:false})
+    RouterModule.forRoot(appRoutes, { enableTracing: false })
   ],
   providers: [],
   bootstrap: [AppComponent]

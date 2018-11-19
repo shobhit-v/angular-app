@@ -29,7 +29,10 @@
   <nav>
     <a routerLink="/router1" routerLinkActive="active">ROUTER-1</a> &nbsp;&nbsp;
     <a routerLink="/router2" routerLinkActive="active">ROUTER-2</a> &nbsp;&nbsp;
-    <a [routerLink]="['/router1',123456]" routerLinkActive="active">ROUTER-userId</a>
+    <a [routerLink]="['/router1',123456]" routerLinkActive="active">ROUTER-userId</a> &nbsp;&nbsp;
+    <a [routerLink]="['/router1',123456]" 
+    [queryParams]="{email:'shobhit@gmail.com'}"
+    routerLinkActive="active">ROUTER-userId-Email</a> &nbsp;&nbsp;
   </nav>
   <router-outlet></router-outlet>
 </div>

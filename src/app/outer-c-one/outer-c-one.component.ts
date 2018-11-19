@@ -21,7 +21,18 @@ export class OuterCOneComponent implements OnInit {
       //   console.log(this.userId);
       // }
     )
-    
+    this.route.queryParams.subscribe(
+      qparams => {
+        console.log(qparams);
+      }
+    );
+    this.route.data.subscribe(
+      data => {
+        console.log(data);
+        console.log(data.headingone);
+      }
+    )
+
   }
 
   ngOnInit() {
