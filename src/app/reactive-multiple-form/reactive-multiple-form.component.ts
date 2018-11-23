@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import {CustomeValidator} from './testValidator'
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
+import { CustomeValidator } from './testValidator'
 
 @Component({
   selector: 'app-reactive-multiple-form',
@@ -16,23 +16,38 @@ export class ReactiveMultipleFormComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email, CustomeValidator.haveSpace, CustomeValidator.haveDotCom ]],
+      email: ['', [Validators.required, Validators.email, CustomeValidator.haveSpace, CustomeValidator.haveDotCom]],
       password: ['', Validators.required],
-      address: this.fb.group({
-        addressLine1: '',
-        addressLine2: '',
-        city: '',
-        state: ''
-      })
+      address: this.fb.array([this.createGroup()])
     })
   }
+
+  createGroup() {
+    return this.fb.group({
+      addressLine1: '',
+      addressLine2: '',
+      city: '',
+      state: ''
+    })
+  }
+
+  addGroup() {
+    let arr = this.loginForm.get('address') as FormArray;
+    arr.push(this.createGroup());
+  }
+
+  removeGroup(i) {
+    let arr = this.loginForm.get('address') as FormArray;
+    arr.removeAt(i);
+  }
+
 
   submitForm() {
     // console.log(this.loginForm.value)
     console.log(this.loginForm.getRawValue())
   }
 
-  resetForm(){
+  resetForm() {
     this.loginForm.reset();
   }
 
@@ -69,7 +84,7 @@ export class ReactiveMultipleFormComponent implements OnInit {
   setFewDataToform() {
     this.loginForm.patchValue({
       email: 'sample@value.com',
-      password: '123',      
+      password: '123',
     });
   }
 
