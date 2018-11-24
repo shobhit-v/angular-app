@@ -27,6 +27,7 @@ import { ReactiveMultipleFormComponent } from './reactive-multiple-form/reactive
 import { OuterCOneComponent } from './outer-c-one/outer-c-one.component';
 import { OuterCTwoComponent } from './outer-c-two/outer-c-two.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProtectTestGuard } from './protect-test.guard';
 
 const appRoutes: Routes = [
   {
@@ -40,9 +41,13 @@ const appRoutes: Routes = [
     path: 'lazyloading',
     loadChildren: './testing/testing.module#TestingModule'
   },
-  { path: 'router2', component: OuterCTwoComponent },
+  {
+    path: 'router2',
+    canActivate: [ProtectTestGuard],
+    component: OuterCTwoComponent
+  },
   { path: '', redirectTo: 'router1', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }  
+  { path: '**', component: PageNotFoundComponent }
 
 ];
 
@@ -78,7 +83,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes, { enableTracing: false })
   ],
-  providers: [],
+  providers: [ProtectTestGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
