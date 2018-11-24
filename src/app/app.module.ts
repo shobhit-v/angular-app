@@ -36,9 +36,14 @@ const appRoutes: Routes = [
       headingone: "hello"
     }
   },
+  {
+    path: 'lazyloading',
+    loadChildren: './testing/testing.module#TestingModule'
+  },
   { path: 'router2', component: OuterCTwoComponent },
-  //{ path: '', redirectTo: 'router1', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '', redirectTo: 'router1', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }  
+
 ];
 
 @NgModule({
